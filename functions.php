@@ -224,6 +224,18 @@ function crunge_comments( $comment, $args, $depth ) {
 } // don't remove this bracket!
 
 
+/* PHP working in widgets */
+add_filter('widget_text','rgps_execute_php',100);
+function rgps_execute_php($html){
+    if(strpos($html,"<"."?php")!==false){
+        ob_start();
+        eval("?".">".$html);
+        $html=ob_get_contents();
+        ob_end_clean();
+    }
+    return $html;
+}
+
 /*
 This is a modification of a function found in the
 twentythirteen theme where we can declare some
