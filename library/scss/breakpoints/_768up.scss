@@ -34,7 +34,13 @@ HEADER STYLES
 
 .header {}
 
-	#logo {}
+	#logo {
+		a{
+			&:hover, &:focus{
+				background-position:0 -138px;
+			}
+		}
+	}
 
 /*//////////////////////
 NAVIGATION STYLES

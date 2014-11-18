@@ -21,7 +21,7 @@ body {
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $gray;
+	background-color: $dark-gray;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -153,14 +153,24 @@ HEADER STYLES
 /////////////////////*/
 
 .header {
-	background-color: $black;
+	position: relative;
+	width: 100%;
+	height: 145px;
+	background: #131313 url(../images/bg_header.png) repeat-x top right;
 }
 
 	#logo {
 		margin: 0.75em 0;
 
 		a {
-			color: $white;
+			display:block;
+			position:relative;
+			top:-55px;
+			width:306px;
+			height:149px;
+			text-indent:-9999px;
+			border:none!important;
+			background:url(../images/logo.png) no-repeat 0 15px;
 		}
 	}
 
@@ -253,6 +263,8 @@ POSTS & CONTENT STYLES
 
 #content {
 	margin-top: 1.5em;
+	width:100%;
+	background:#000 url(../images/bg.jpg) repeat-y 50% 150px fixed;
 }
 
 		.hentry {

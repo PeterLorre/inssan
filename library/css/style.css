@@ -921,7 +921,7 @@ textarea,
   padding: 0 12px;
   margin-bottom: 14px;
   font-size: 1em;
-  color: #5c6b80;
+  color: #cccccc;
   border-radius: 3px;
   vertical-align: middle;
   box-shadow: none;
@@ -1183,8 +1183,8 @@ body {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
-  color: #5c6b80;
-  background-color: #eaedf2;
+  color: #cccccc;
+  background-color: #131313;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -1287,14 +1287,24 @@ h5, .h5 {
 }
 
 .header {
-  background-color: #323944;
+  position: relative;
+  width: 100%;
+  height: 145px;
+  background: #131313 url(../images/bg_header.png) repeat-x top right;
 }
 
 #logo {
   margin: 0.75em 0;
 }
 #logo a {
-  color: white;
+  display: block;
+  position: relative;
+  top: -55px;
+  width: 306px;
+  height: 149px;
+  text-indent: -9999px;
+  border: none !important;
+  background: url(../images/logo.png) no-repeat 0 15px;
 }
 
 /*
@@ -1343,6 +1353,8 @@ and more scalable.
 /* end .nav */
 #content {
   margin-top: 1.5em;
+  width: 100%;
+  background: black url(../images/bg.jpg) repeat-y 50% 150px fixed;
 }
 
 .hentry {
@@ -1535,11 +1547,11 @@ and more scalable.
 }
 .pagination .current {
   cursor: default;
-  color: #5c6b80;
+  color: #cccccc;
 }
 .pagination .current:hover, .pagination .current:focus {
   background-color: white;
-  color: #5c6b80;
+  color: #cccccc;
 }
 
 /* end .crunge_page_navi */
@@ -1670,7 +1682,7 @@ and more scalable.
   margin: 0;
 }
 .logged-in-as a {
-  color: #5c6b80;
+  color: #cccccc;
 }
 
 .comment-form-comment {
@@ -1807,6 +1819,10 @@ you can add resource intensive styles.
 @media only screen and (min-width: 768px) {
   .wrap {
     width: 760px;
+  }
+
+  #logo a:hover, #logo a:focus {
+    background-position: 0 -138px;
   }
 
   .nav {

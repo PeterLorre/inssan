@@ -138,6 +138,10 @@ do they need tweaking?
   width: 760px;
 }
 
+#logo a:hover, #logo a:focus {
+  background-position: 0 -138px;
+}
+
 .nav {
   border: 0;
   /* end .menu ul li */
