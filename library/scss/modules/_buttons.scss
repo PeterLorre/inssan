@@ -31,7 +31,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   text-decoration: none;
   color: $white;
   font-size: 0.9em;
-  font-size: 34px;
+  font-size: 16px;
   line-height: 34px;
   font-weight: normal;
   padding: 0 24px;
@@ -72,3 +72,18 @@ and it will create a button dependant on those variables.
   } // end active
 
 } // end blue button
+
+.red-btn {
+  @extend %btn; // here we load the btn defaults
+  background-color: $red;
+
+  &:hover,
+  &:focus {
+    background-color: darken($red, 4%);
+  } // end hover
+
+  &:active {
+    background-color: darken($red, 5%);
+  } // end active
+
+} // end red button

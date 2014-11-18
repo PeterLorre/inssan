@@ -34,38 +34,60 @@ HEADER STYLES
 
 .header {}
 
-	#logo {
-		a{
-			&:hover, &:focus{
-				background-position:0 -138px;
-			}
+.social-icons-top{
+	ul{
+	}
+	li{
+		float: left;
+		position: relative;
+	}
+}
+
+#logo {
+	a{
+		float: left;
+		&:hover, &:focus{
+			background-position:0 -138px;
 		}
 	}
+}
+
+.info-header{
+	position: absolute;
+	right: 0;
+	top: 15px;
+	.call-us{
+	font-size: 20px;
+	}
+	.make-appt{
+	}
+
+}
+
 
 /*//////////////////////
 NAVIGATION STYLES
 //////////////////////*/
 
-.nav {
+.nav.primary{
 	border: 0;
-	ul {
-		background:$black;
-		margin-top:0;
-	}
+	margin-top: 85px;
+	width: 770px;
+
 	li {
-		float: left;
+		float: right;
 		position: relative;
 
 		a {
 			border-bottom: 0;
-
+			@include transition(all 0.2s ease-in-out);
 			/*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
 				color: $white;
-				text-decoration: underline;
+				border-bottom: 2px solid $red;
 			}
 		}
 
@@ -142,7 +164,22 @@ NAVIGATION STYLES
 		a {}
 	}  /* end current highlighters */
 
-} /* end .nav */
+} /* end .nav.primary */
+
+/*/////////////////////////
+SOCIAL LINKS
+/////////////////////////*/
+.social-icons-top{
+	a{
+		font-size: 22px;
+		color: $gray;
+		padding: .3em;
+		@include transition(all 0.2s ease-in-out);
+		&:hover, &:focus{
+			color: $white;
+		}
+	}
+}
 
 /*//////////////////////////
 SIDEBARS & ASIDES

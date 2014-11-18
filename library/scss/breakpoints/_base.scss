@@ -21,9 +21,13 @@ body {
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $dark-gray;
+	background-color: $darkest-gray;
   -webkit-font-smoothing: antialiased;
 }
+
+/*Selecting styles*/
+::-moz-selection { color: $white;  background: $red; }
+::selection      { color: $white;  background: $red; } 
 
 /*////////////////////////
 WORDPRESS BODY CLASSES
@@ -31,7 +35,31 @@ style a page via class
 ////////////////////////*/
 
 .rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
-.home {}                          /* home page */
+.home {
+	#content{
+		background: url('../images/bg-hero.jpg') 0 -25px;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+	.section-hero{
+		width: 100%;
+		background: $dark-gray;
+		height: 460px;
+		opacity: .6;
+	}
+	.section-services{
+		width: 100%;
+		background: $blue;
+		height: 360px;
+		opacity: .9;
+	}
+	.section-news{
+		width: 100%;
+		background: $dark-gray;
+		height: 460px;
+		opacity: .6;
+	}
+}                          /* home page */
 .blog {}                          /* blog template page */
 .archive {}                       /* archive page */
 .date {}                          /* date archive page */
@@ -153,26 +181,44 @@ HEADER STYLES
 /////////////////////*/
 
 .header {
-	position: relative;
 	width: 100%;
-	height: 145px;
-	background: #131313 url(../images/bg_header.png) repeat-x top right;
+	background: $red url(../images/bg_header.png) repeat-x top right;
+	#inner-header{
+		position: relative;
+	}
 }
 
-	#logo {
-		margin: 0.75em 0;
-
-		a {
-			display:block;
-			position:relative;
-			top:-55px;
-			width:306px;
-			height:149px;
-			text-indent:-9999px;
-			border:none!important;
-			background:url(../images/logo.png) no-repeat 0 15px;
+#logo {
+	// margin: 0.75em 0;
+	margin: 0;
+	a {
+		display:block;
+		position:relative;
+		top:-15px;
+		width:306px;
+		height:149px;
+		text-indent:-9999px;
+		border:none!important;
+		background:url(../images/logo.png) no-repeat 0 15px;
+		&:hover, &:focus{
+			border:none;
+			outline:none;
 		}
 	}
+}
+
+.info-header{
+	.call-us{
+		margin: 0;
+		text-align: center;
+	}
+	.make-appt{
+		display:block;
+		margin: 5px auto;
+		text-align: center;
+		font-size: .85em;
+	}
+}
 
 /*/////////////////////
 NAVIGATION STYLES
@@ -186,7 +232,7 @@ the navs on the site so our css is cleaner
 and more scalable.
 */
 
-.nav {
+.nav.primary  {
 	border-bottom: 0;
 	margin: 0;
 
@@ -194,7 +240,7 @@ and more scalable.
 
 		a {
 			display: block;
-			color: $white;
+			color: $gray;
 			text-decoration: none;
 			padding: 0.75em;
 
@@ -254,7 +300,19 @@ and more scalable.
 
 	}  /* end current highlighters */
 
-} /* end .nav */
+} /* end .nav.primary */
+
+/*/////////////////////////
+SOCIAL LINKS
+/////////////////////////*/
+
+.social-icons-bottom{
+	a{
+		font-size: 22px;
+		color: $dark-gray;
+		padding: .3em;
+	}
+}
 
 
 /*/////////////////////////
@@ -262,9 +320,9 @@ POSTS & CONTENT STYLES
 /////////////////////////*/
 
 #content {
-	margin-top: 1.5em;
+	// margin-top: 1.5em;
 	width:100%;
-	background:#000 url(../images/bg.jpg) repeat-y 50% 150px fixed;
+	// background:#000 url(../images/bg.jpg) repeat-y 50% 150px fixed;
 }
 
 		.hentry {
@@ -440,7 +498,7 @@ POSTS & CONTENT STYLES
 			}
 
 			pre {
-				background: $black;
+				background: $blue;
 				color: $light-gray;
 				font-size: 0.9em;
 				padding: 1.5em;
@@ -874,8 +932,10 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $black;
+	background-color: $darkest-gray;
+	border-top: 20px solid $red;
 	color: $light-gray;
+	height: 300px;
 }
 
 	/*

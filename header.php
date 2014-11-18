@@ -52,13 +52,17 @@
 					<?php // if you'd like to use the site description you can un-comment it below ?>
 					<?php // bloginfo('description'); ?>
 
+					<div class="info-header">
+						<h3 class="call-us"><i></i>Call Us:(615)791-0900</h3>
+						<a href="#" class="red-btn make-appt">Make an Appointment</a>
+					</div>
 
 					<nav role="navigation">
 						<?php wp_nav_menu(array(
     					'container' => false,                           // remove nav container
     					'container_class' => 'menu cf',                 // class of container (should you choose to use it)
     					'menu' => __( 'The Main Menu', 'crungetheme' ),  // nav name
-    					'menu_class' => 'nav top-nav cf',               // adding custom nav class
+    					'menu_class' => 'nav top-nav primary cf',               // adding custom nav class
     					'theme_location' => 'main-nav',                 // where it's located in the theme
     					'before' => '',                                 // before the menu
         			'after' => '',                                  // after the menu
@@ -69,6 +73,15 @@
 						)); ?>
 
 					</nav>
+
+					<div class="social-icons-top cf" role="navigation">
+						<ul class="cf">
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#"><i class="fa fa-yelp"></i></a></li>
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						</ul>
+					</div>
 
 				</div>
 

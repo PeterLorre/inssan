@@ -858,14 +858,14 @@ to load up the defaults in all our buttons.
 Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 */
-.blue-btn, .comment-reply-link, #submit {
+.blue-btn, .comment-reply-link, #submit, .red-btn {
   display: inline-block;
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
   color: white;
   font-size: 0.9em;
-  font-size: 34px;
+  font-size: 16px;
   line-height: 34px;
   font-weight: normal;
   padding: 0 24px;
@@ -875,11 +875,11 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out;
 }
-.blue-btn:hover, .comment-reply-link:hover, #submit:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus {
+.blue-btn:hover, .comment-reply-link:hover, #submit:hover, .red-btn:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus, .red-btn:focus {
   color: white;
   text-decoration: none;
 }
-.blue-btn:active, .comment-reply-link:active, #submit:active {
+.blue-btn:active, .comment-reply-link:active, #submit:active, .red-btn:active {
   top: 1px;
 }
 
@@ -889,13 +889,23 @@ You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
 .blue-btn, .comment-reply-link, #submit {
-  background-color: #2980b9;
+  background-color: #323944;
 }
 .blue-btn:hover, .comment-reply-link:hover, #submit:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus {
-  background-color: #2574a8;
+  background-color: #292f38;
 }
 .blue-btn:active, .comment-reply-link:active, #submit:active {
-  background-color: #2472a4;
+  background-color: #272d35;
+}
+
+.red-btn {
+  background-color: #782424;
+}
+.red-btn:hover, .red-btn:focus {
+  background-color: #681f1f;
+}
+.red-btn:active {
+  background-color: #641e1e;
 }
 
 input[type="text"],
@@ -929,7 +939,7 @@ textarea,
   width: 100%;
   max-width: 400px;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #eaedf2;
+  background-color: #bbb8b8;
   -webkit-transition: background-color 0.24s ease-in-out;
   transition: background-color 0.24s ease-in-out;
 }
@@ -966,7 +976,7 @@ textarea:focus,
 textarea:active,
 .field:focus,
 .field:active {
-  background-color: #f7f8fa;
+  background-color: #c5c2c2;
 }
 input[type="text"].error, input[type="text"].is-invalid,
 input[type="password"].error,
@@ -1188,7 +1198,42 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/*Selecting styles*/
+::-moz-selection {
+  color: white;
+  background: #782424;
+}
+
+::selection {
+  color: white;
+  background: #782424;
+}
+
 /* for sites that are read right to left (i.e. hebrew) */
+.home #content {
+  background: url("../images/bg-hero.jpg") 0 -25px;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.home .section-hero {
+  width: 100%;
+  background: #444444;
+  height: 460px;
+  opacity: .6;
+}
+.home .section-services {
+  width: 100%;
+  background: #323944;
+  height: 360px;
+  opacity: .9;
+}
+.home .section-news {
+  width: 100%;
+  background: #444444;
+  height: 460px;
+  opacity: .6;
+}
+
 /* home page */
 /* blog template page */
 /* archive page */
@@ -1229,13 +1274,13 @@ body {
 }
 
 a, a:visited {
-  color: #f01d4f;
+  color: #782424;
   /* on hover */
   /* on click */
   /* mobile tap color */
 }
 a:hover, a:focus, a:visited:hover, a:visited:focus {
-  color: #d10e3c;
+  color: #551919;
 }
 a:link, a:visited:link {
   /*
@@ -1287,24 +1332,40 @@ h5, .h5 {
 }
 
 .header {
-  position: relative;
   width: 100%;
-  height: 145px;
-  background: #131313 url(../images/bg_header.png) repeat-x top right;
+  background: #782424 url(../images/bg_header.png) repeat-x top right;
+}
+.header #inner-header {
+  position: relative;
 }
 
 #logo {
-  margin: 0.75em 0;
+  margin: 0;
 }
 #logo a {
   display: block;
   position: relative;
-  top: -55px;
+  top: -15px;
   width: 306px;
   height: 149px;
   text-indent: -9999px;
   border: none !important;
   background: url(../images/logo.png) no-repeat 0 15px;
+}
+#logo a:hover, #logo a:focus {
+  border: none;
+  outline: none;
+}
+
+.info-header .call-us {
+  margin: 0;
+  text-align: center;
+}
+.info-header .make-appt {
+  display: block;
+  margin: 5px auto;
+  text-align: center;
+  font-size: .85em;
 }
 
 /*
@@ -1314,14 +1375,14 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
-.nav {
+.nav.primary {
   border-bottom: 0;
   margin: 0;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */
 }
-.nav li {
+.nav.primary li {
   /*
   so you really have to rethink your dropdowns for mobile.
   you don't want to have it expand too much because the
@@ -1330,9 +1391,9 @@ and more scalable.
   http://www.alistapart.com/articles/organizing-mobile/
   */
 }
-.nav li a {
+.nav.primary li a {
   display: block;
-  color: white;
+  color: #bbb8b8;
   text-decoration: none;
   padding: 0.75em;
   /*
@@ -1342,19 +1403,23 @@ and more scalable.
   keep this file as small as possible!
   */
 }
-.nav li a:hover, .nav li a:focus {
+.nav.primary li a:hover, .nav.primary li a:focus {
   background: transparent;
 }
-.nav li ul.sub-menu li a,
-.nav li ul.children li a {
+.nav.primary li ul.sub-menu li a,
+.nav.primary li ul.children li a {
   padding-left: 30px;
 }
 
-/* end .nav */
+/* end .nav.primary */
+.social-icons-bottom a {
+  font-size: 22px;
+  color: #444444;
+  padding: .3em;
+}
+
 #content {
-  margin-top: 1.5em;
   width: 100%;
-  background: black url(../images/bg.jpg) repeat-y 50% 150px fixed;
 }
 
 .hentry {
@@ -1413,7 +1478,7 @@ and more scalable.
 }
 .entry-content table {
   width: 100%;
-  border: 1px solid #eaedf2;
+  border: 1px solid #bbb8b8;
   margin-bottom: 1.5em;
 }
 .entry-content table caption {
@@ -1424,22 +1489,22 @@ and more scalable.
   letter-spacing: 1px;
 }
 .entry-content tr {
-  border-bottom: 1px solid #eaedf2;
+  border-bottom: 1px solid #bbb8b8;
 }
 .entry-content tr:nth-child(even) {
   background-color: #f8f9fa;
 }
 .entry-content td {
   padding: 7px;
-  border-right: 1px solid #eaedf2;
+  border-right: 1px solid #bbb8b8;
 }
 .entry-content td:last-child {
   border-right: 0;
 }
 .entry-content th {
   background-color: #f8f9fa;
-  border-bottom: 1px solid #eaedf2;
-  border-right: 1px solid #eaedf2;
+  border-bottom: 1px solid #bbb8b8;
+  border-right: 1px solid #bbb8b8;
 }
 .entry-content th:last-child {
   border-right: 0;
@@ -1447,7 +1512,7 @@ and more scalable.
 .entry-content blockquote {
   margin: 0 0 1.5em 0.75em;
   padding: 0 0 0 0.75em;
-  border-left: 3px solid #2980b9;
+  border-left: 3px solid #323944;
   font-style: italic;
   color: #9fa6b4;
 }
@@ -1527,7 +1592,7 @@ and more scalable.
   float: left;
   display: inline;
   overflow: hidden;
-  border-right: 1px solid #eaedf2;
+  border-right: 1px solid #bbb8b8;
 }
 .pagination a, .pagination span {
   margin: 0;
@@ -1539,10 +1604,10 @@ and more scalable.
   padding: 0.75em;
   min-width: 1em;
   display: block;
-  color: #2980b9;
+  color: #323944;
 }
 .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
-  background-color: #2980b9;
+  background-color: #323944;
   color: white;
 }
 .pagination .current {
@@ -1733,8 +1798,10 @@ and more scalable.
 
 .footer {
   clear: both;
-  background-color: #323944;
+  background-color: #131313;
+  border-top: 20px solid #782424;
   color: #f8f9fa;
+  height: 300px;
 }
 
 /*
@@ -1821,41 +1888,58 @@ you can add resource intensive styles.
     width: 760px;
   }
 
+  .social-icons-top li {
+    float: left;
+    position: relative;
+  }
+
+  #logo a {
+    float: left;
+  }
   #logo a:hover, #logo a:focus {
     background-position: 0 -138px;
   }
 
-  .nav {
+  .info-header {
+    position: absolute;
+    right: 0;
+    top: 15px;
+  }
+  .info-header .call-us {
+    font-size: 20px;
+  }
+
+  .nav.primary {
     border: 0;
+    margin-top: 85px;
+    width: 770px;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */
   }
-  .nav ul {
-    background: #323944;
-    margin-top: 0;
-  }
-  .nav li {
-    float: left;
+  .nav.primary li {
+    float: right;
     position: relative;
     /*
     plan your menus and drop-downs wisely.
     */
     /* showing sub-menus */
   }
-  .nav li a {
+  .nav.primary li a {
     border-bottom: 0;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     /*
     you can use hover styles here even though this size
     has the possibility of being a mobile device.
     */
   }
-  .nav li a:hover, .nav li a:focus {
+  .nav.primary li a:hover, .nav.primary li a:focus {
     color: white;
-    text-decoration: underline;
+    border-bottom: 2px solid #782424;
   }
-  .nav li ul.sub-menu,
-  .nav li ul.children {
+  .nav.primary li ul.sub-menu,
+  .nav.primary li ul.children {
     margin-top: 0;
     border: 1px solid #ccc;
     border-top: 0;
@@ -1864,37 +1948,48 @@ you can add resource intensive styles.
     z-index: 8999;
     /* highlight sub-menu current page */
   }
-  .nav li ul.sub-menu li,
-  .nav li ul.children li {
+  .nav.primary li ul.sub-menu li,
+  .nav.primary li ul.children li {
     /*
     if you need to go deeper, go nuts
     just remember deeper menus suck
     for usability. k, bai.
     */
   }
-  .nav li ul.sub-menu li a,
-  .nav li ul.children li a {
+  .nav.primary li ul.sub-menu li a,
+  .nav.primary li ul.children li a {
     padding-left: 10px;
     border-right: 0;
     display: block;
     width: 180px;
     border-bottom: 1px solid #ccc;
   }
-  .nav li ul.sub-menu li:last-child a,
-  .nav li ul.children li:last-child a {
+  .nav.primary li ul.sub-menu li:last-child a,
+  .nav.primary li ul.children li:last-child a {
     border-bottom: 0;
   }
-  .nav li ul.sub-menu li ul,
-  .nav li ul.children li ul {
+  .nav.primary li ul.sub-menu li ul,
+  .nav.primary li ul.children li ul {
     top: 0;
     left: 100%;
   }
-  .nav li:hover > ul {
+  .nav.primary li:hover > ul {
     top: auto;
     visibility: visible;
   }
 
-  /* end .nav */
+  /* end .nav.primary */
+  .social-icons-top a {
+    font-size: 22px;
+    color: #bbb8b8;
+    padding: .3em;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  .social-icons-top a:hover, .social-icons-top a:focus {
+    color: white;
+  }
+
   .sidebar {
     margin-top: 2.2em;
   }
