@@ -254,10 +254,11 @@ function crunge_scripts() {
 
   // register bootstrap cdn css + js
   wp_enqueue_style( 'style-bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css', array(), '', 'all' );
+  wp_enqueue_script( 'script-google-maps', 'https://maps.googleapis.com/maps/api/js', array( 'jquery' ), '', false );
   wp_enqueue_script( 'script-bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js', array( 'jquery' ), '', true );
 
     // register bootstrap cdn css + js
-  wp_enqueue_style( 'style-fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css', array(), '', 'all' );
+  wp_enqueue_style( 'style-fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css', array(), '', 'all' );
 
 }
 

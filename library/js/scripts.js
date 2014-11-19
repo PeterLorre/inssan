@@ -101,6 +101,26 @@ function loadGravatars() {
 	}
 } // end function
 
+  function googleMap() {
+  if(document.getElementById('map_canvas')) {
+    var map_canvas = document.getElementById('map_canvas');
+    var myLatlng = new google.maps.LatLng(35.90954,-86.82252);
+    var mapOptions = {
+      center: myLatlng,
+      zoom: 15,
+      zoomControl: true,
+      scaleControl: true,
+      scrollwheel: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(map_canvas, mapOptions);
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Inssan Automotive',
+  });
+  }
+}
 
 /*
  * Put all your regular jQuery in here.
@@ -112,6 +132,8 @@ jQuery(document).ready(function($) {
    * You can remove this if you don't need it
   */
   loadGravatars();
+
+googleMap();
 
 
 }); /* end of as page load scripts */

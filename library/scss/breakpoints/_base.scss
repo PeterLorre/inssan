@@ -26,8 +26,8 @@ body {
 }
 
 /*Selecting styles*/
-::-moz-selection { color: $white;  background: $red; }
-::selection      { color: $white;  background: $red; } 
+::-moz-selection { color: $white;  background: $gray; }
+::selection      { color: $white;  background: $gray; } 
 
 /*////////////////////////
 WORDPRESS BODY CLASSES
@@ -36,11 +36,6 @@ style a page via class
 
 .rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
 .home {
-	#content{
-		background: url('../images/bg-hero.jpg') 0 -25px;
-		background-size: cover;
-		background-attachment: fixed;
-	}
 	.section-hero{
 		width: 100%;
 		background: $dark-gray;
@@ -113,6 +108,7 @@ a, a:visited {
 	/* on hover */
 	&:hover, &:focus {
 		color: $link-hover;
+		outline: none;
 	}
 
 	/* on click */
@@ -182,7 +178,7 @@ HEADER STYLES
 
 .header {
 	width: 100%;
-	background: $red url(../images/bg_header.png) repeat-x top right;
+	// background: $red url(../images/bg_header.png) repeat-x top right;
 	#inner-header{
 		position: relative;
 	}
@@ -194,9 +190,11 @@ HEADER STYLES
 	a {
 		display:block;
 		position:relative;
-		top:-15px;
+		margin: 0 auto;
+		top:-10px;
+		left: 35px;
 		width:306px;
-		height:149px;
+		height:90px;
 		text-indent:-9999px;
 		border:none!important;
 		background:url(../images/logo.png) no-repeat 0 15px;
@@ -207,17 +205,28 @@ HEADER STYLES
 	}
 }
 
-.info-header{
-	.call-us{
-		margin: 0;
-		text-align: center;
-	}
-	.make-appt{
-		display:block;
-		margin: 5px auto;
+.call-us{
+	margin: .75em 0 .75em .75em;
+	color: $green;
+	text-align: center;
+	a{
 		text-align: center;
 		font-size: .85em;
+		float: right;
 	}
+}
+.make-appt{
+	margin-bottom: 1em;
+	display: block;
+	text-align: center;
+	i{
+		margin-left: 10px;
+		font-size: 18px;
+	}
+}
+.view-map{
+	display: inline-block;
+	float: right;
 }
 
 /*/////////////////////
@@ -231,10 +240,12 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
-
+nav{
+	background:$red;
+}
 .nav.primary  {
-	border-bottom: 0;
-	margin: 0;
+	display: none;
+	float: left;
 
 	li {
 
@@ -268,7 +279,7 @@ and more scalable.
 		*/
 		ul.sub-menu,
 		ul.children {
-
+			background: $darkest-gray;
 			li {
 
 				a {
@@ -306,11 +317,11 @@ and more scalable.
 SOCIAL LINKS
 /////////////////////////*/
 
-.social-icons-bottom{
+.social-icons{
 	a{
 		font-size: 22px;
 		color: $dark-gray;
-		padding: .3em;
+		padding: .75em;
 	}
 }
 

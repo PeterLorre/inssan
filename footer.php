@@ -10,15 +10,24 @@
     					'menu_class' => 'nav footer-nav cf',            // adding custom nav class
     					'theme_location' => 'footer-links',             // where it's located in the theme
     					'before' => '',                                 // before the menu
-        			'after' => '',                                  // after the menu
-        			'link_before' => '',                            // before each link
-        			'link_after' => '',                             // after each link
-        			'depth' => 0,                                   // limit the depth of the nav
+        				'after' => '',                                  // after the menu
+        				'link_before' => '',                            // before each link
+        				'link_after' => '',                             // after each link
+        				'depth' => 0,                                   // limit the depth of the nav
     					'fallback_cb' => 'crunge_footer_links_fallback'  // fallback function
 						)); ?>
 					</nav>
 
 					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+
+					<div class="social-icons cf">
+						<ul class="cf">
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#"><i class="fa fa-yelp"></i></a></li>
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						</ul>
+					</div>
 
 				</div>
 

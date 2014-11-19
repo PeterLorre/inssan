@@ -13,11 +13,12 @@
 				
 					</div>
 				</section>
-				<section class="entry-content section-news cf">
-					<div id="inner-content" class="wrap cf">
+				<section class=" section-news cf">
 
-				
+					<div id="google-maps">
+						<div id="map_canvas" style="height:360px;width:100%;"></div>
 					</div>
+				
 				</section>
 
 

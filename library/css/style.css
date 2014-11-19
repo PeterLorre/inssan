@@ -868,7 +868,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   font-size: 16px;
   line-height: 34px;
   font-weight: normal;
-  padding: 0 24px;
+  padding: 5px 24px;
   border-radius: 4px;
   border: 0;
   cursor: pointer;
@@ -1194,27 +1194,22 @@ body {
   font-size: 100%;
   line-height: 1.5;
   color: #cccccc;
-  background-color: #131313;
+  background-color: #202020;
   -webkit-font-smoothing: antialiased;
 }
 
 /*Selecting styles*/
 ::-moz-selection {
   color: white;
-  background: #782424;
+  background: #bbb8b8;
 }
 
 ::selection {
   color: white;
-  background: #782424;
+  background: #bbb8b8;
 }
 
 /* for sites that are read right to left (i.e. hebrew) */
-.home #content {
-  background: url("../images/bg-hero.jpg") 0 -25px;
-  background-size: cover;
-  background-attachment: fixed;
-}
 .home .section-hero {
   width: 100%;
   background: #444444;
@@ -1274,13 +1269,14 @@ body {
 }
 
 a, a:visited {
-  color: #782424;
+  color: white;
   /* on hover */
   /* on click */
   /* mobile tap color */
 }
 a:hover, a:focus, a:visited:hover, a:visited:focus {
-  color: #551919;
+  color: #e8e8e8;
+  outline: none;
 }
 a:link, a:visited:link {
   /*
@@ -1333,7 +1329,6 @@ h5, .h5 {
 
 .header {
   width: 100%;
-  background: #782424 url(../images/bg_header.png) repeat-x top right;
 }
 .header #inner-header {
   position: relative;
@@ -1345,9 +1340,11 @@ h5, .h5 {
 #logo a {
   display: block;
   position: relative;
-  top: -15px;
+  margin: 0 auto;
+  top: -10px;
+  left: 35px;
   width: 306px;
-  height: 149px;
+  height: 90px;
   text-indent: -9999px;
   border: none !important;
   background: url(../images/logo.png) no-repeat 0 15px;
@@ -1357,15 +1354,30 @@ h5, .h5 {
   outline: none;
 }
 
-.info-header .call-us {
-  margin: 0;
+.call-us {
+  margin: .75em 0 .75em .75em;
+  color: #587852;
   text-align: center;
 }
-.info-header .make-appt {
-  display: block;
-  margin: 5px auto;
+.call-us a {
   text-align: center;
   font-size: .85em;
+  float: right;
+}
+
+.make-appt {
+  margin-bottom: 1em;
+  display: block;
+  text-align: center;
+}
+.make-appt i {
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.view-map {
+  display: inline-block;
+  float: right;
 }
 
 /*
@@ -1375,9 +1387,13 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
+nav {
+  background: #782424;
+}
+
 .nav.primary {
-  border-bottom: 0;
-  margin: 0;
+  display: none;
+  float: left;
   /* end .menu li */
   /* highlight current page */
   /* end current highlighters */
@@ -1406,16 +1422,20 @@ and more scalable.
 .nav.primary li a:hover, .nav.primary li a:focus {
   background: transparent;
 }
+.nav.primary li ul.sub-menu,
+.nav.primary li ul.children {
+  background: #202020;
+}
 .nav.primary li ul.sub-menu li a,
 .nav.primary li ul.children li a {
   padding-left: 30px;
 }
 
 /* end .nav.primary */
-.social-icons-bottom a {
+.social-icons a {
   font-size: 22px;
   color: #444444;
-  padding: .3em;
+  padding: .75em;
 }
 
 #content {
@@ -1798,7 +1818,7 @@ and more scalable.
 
 .footer {
   clear: both;
-  background-color: #131313;
+  background-color: #202020;
   border-top: 20px solid #782424;
   color: #f8f9fa;
   height: 300px;
@@ -1888,6 +1908,14 @@ you can add resource intensive styles.
     width: 760px;
   }
 
+  .header {
+    width: 100%;
+    position: fixed;
+    height: 157px;
+    background: #202020;
+    z-index: 1;
+  }
+
   .social-icons-top li {
     float: left;
     position: relative;
@@ -1895,31 +1923,45 @@ you can add resource intensive styles.
 
   #logo a {
     float: left;
+    margin: 0;
+    left: 0;
   }
   #logo a:hover, #logo a:focus {
     background-position: 0 -138px;
   }
 
-  .info-header {
-    position: absolute;
-    right: 0;
-    top: 15px;
+  .call-us {
+    float: right;
+    font-size: 1.2em;
   }
-  .info-header .call-us {
-    font-size: 20px;
+  .call-us i {
+    position: relative;
+    top: 2px;
+    font-size: 24px;
+    margin-right: 10px;
+  }
+
+  .make-appt {
+    float: right;
+    clear: right;
+    font-size: 13px;
+    padding: 3px 15px;
+    margin-bottom: 10px;
+  }
+  .make-appt:hover, .make-appt:focus {
+    color: white;
   }
 
   .nav.primary {
-    border: 0;
-    margin-top: 85px;
-    width: 770px;
+    display: block;
+    margin: 0 0 .4em 0;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */
   }
   .nav.primary li {
-    float: right;
     position: relative;
+    display: inline-block;
     /*
     plan your menus and drop-downs wisely.
     */
@@ -1927,8 +1969,8 @@ you can add resource intensive styles.
   }
   .nav.primary li a {
     border-bottom: 0;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
     /*
     you can use hover styles here even though this size
     has the possibility of being a mobile device.
@@ -1936,12 +1978,10 @@ you can add resource intensive styles.
   }
   .nav.primary li a:hover, .nav.primary li a:focus {
     color: white;
-    border-bottom: 2px solid #782424;
   }
   .nav.primary li ul.sub-menu,
   .nav.primary li ul.children {
     margin-top: 0;
-    border: 1px solid #ccc;
     border-top: 0;
     position: absolute;
     visibility: hidden;
@@ -1962,7 +2002,6 @@ you can add resource intensive styles.
     border-right: 0;
     display: block;
     width: 180px;
-    border-bottom: 1px solid #ccc;
   }
   .nav.primary li ul.sub-menu li:last-child a,
   .nav.primary li ul.children li:last-child a {
@@ -1979,15 +2018,34 @@ you can add resource intensive styles.
   }
 
   /* end .nav.primary */
-  .social-icons-top a {
+  .social-icons {
+    float: right;
+  }
+  .social-icons ul {
+    margin: 0;
+  }
+  .social-icons a {
+    display: block;
     font-size: 22px;
     color: #bbb8b8;
-    padding: .3em;
+    padding: .2em .2em 0 .2em;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
   }
-  .social-icons-top a:hover, .social-icons-top a:focus {
+  .social-icons a:last-of-type {
+    padding-right: 0;
+  }
+  .social-icons a:hover, .social-icons a:focus {
     color: white;
+  }
+  .social-icons a i {
+    background: #202020;
+    padding: .4em .7em;
+    border-radius: 6px;
+    font-size: 20px;
+  }
+  .social-icons a i:hover, .social-icons a i:focus {
+    background: #252525;
   }
 
   .sidebar {
@@ -2037,6 +2095,11 @@ you can add resource intensive styles.
   }
 
   /* end .footer-links */
+  .home #content {
+    background: url("../images/hero-bg.jpg") 0 -25px;
+    background-size: cover;
+    background-attachment: fixed;
+  }
 }
 /*
 DESKTOP

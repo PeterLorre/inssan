@@ -32,7 +32,13 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 ///////////////////*/
 
-.header {}
+.header {
+	width: 100%;
+	position: fixed;
+	height: 157px;
+	background: $darkest-gray;
+	z-index: 1;
+}
 
 .social-icons-top{
 	ul{
@@ -46,23 +52,37 @@ HEADER STYLES
 #logo {
 	a{
 		float: left;
+		margin: 0;
+		left: 0;
 		&:hover, &:focus{
 			background-position:0 -138px;
 		}
 	}
 }
 
-.info-header{
-	position: absolute;
-	right: 0;
-	top: 15px;
-	.call-us{
-	font-size: 20px;
-	}
-	.make-appt{
-	}
 
+.call-us{
+	float: right;
+	font-size: 1.2em;
+	i{
+		position: relative;
+		top: 2px;
+		font-size: 24px;
+		margin-right: 10px;
+	}
 }
+.make-appt{
+	float: right;
+	clear: right;
+	font-size: 13px;
+	padding: 3px 15px;
+	margin-bottom: 10px;
+	&:hover, &:focus{
+		color: white;
+	}
+}
+
+
 
 
 /*//////////////////////
@@ -70,24 +90,22 @@ NAVIGATION STYLES
 //////////////////////*/
 
 .nav.primary{
-	border: 0;
-	margin-top: 85px;
-	width: 770px;
-
+	display: block;
+	margin: 0 0 .4em 0;
 	li {
-		float: right;
 		position: relative;
+		display: inline-block;
 
 		a {
 			border-bottom: 0;
-			@include transition(all 0.2s ease-in-out);
+			@include transition(color 0.2s ease-in-out);
 			/*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
 				color: $white;
-				border-bottom: 2px solid $red;
+				// border-bottom: 2px solid $red;
 			}
 		}
 
@@ -100,7 +118,7 @@ NAVIGATION STYLES
 		ul.sub-menu,
 		ul.children {
 			margin-top: 0;
-			border: 1px solid #ccc;
+			// border: 1px solid #ccc;
 			border-top: 0;
 			position: absolute;
 			visibility: hidden;
@@ -113,7 +131,7 @@ NAVIGATION STYLES
 					border-right: 0;
 					display: block;
 					width: 180px;
-					border-bottom: 1px solid #ccc;
+					// border-bottom: 1px solid #ccc;
 
 					&:hover,
 					&:focus {}
@@ -169,14 +187,32 @@ NAVIGATION STYLES
 /*/////////////////////////
 SOCIAL LINKS
 /////////////////////////*/
-.social-icons-top{
+.social-icons{
+	float: right;
+	ul{
+		margin: 0;
+	}
 	a{
+		display: block;
 		font-size: 22px;
 		color: $gray;
-		padding: .3em;
+		padding: .2em .2em 0 .2em;
 		@include transition(all 0.2s ease-in-out);
+		&:last-of-type{
+			padding-right: 0;
+		}
 		&:hover, &:focus{
 			color: $white;
+		}
+		i{
+			// color: #D4D4D4;
+			background: $darkest-gray;
+			padding: .4em .7em;
+			border-radius: 6px;
+			font-size: 20px;
+			&:hover, &:focus{
+				background: lighten($darkest-gray, 2%);
+			}
 		}
 	}
 }
@@ -329,3 +365,19 @@ mobile. Make sure to double check these!
 	}
 } /* end .footer-links */
 
+.home {
+	#content{
+		background: url('../images/hero-bg.jpg') 0 -25px;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+	.section-hero{
+
+	}
+	.section-services{
+
+	}
+	.section-news{
+
+	}
+}              

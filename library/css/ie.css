@@ -138,6 +138,14 @@ do they need tweaking?
   width: 760px;
 }
 
+.header {
+  width: 100%;
+  position: fixed;
+  height: 157px;
+  background: #202020;
+  z-index: 1;
+}
+
 .social-icons-top li {
   float: left;
   position: relative;
@@ -145,31 +153,45 @@ do they need tweaking?
 
 #logo a {
   float: left;
+  margin: 0;
+  left: 0;
 }
 #logo a:hover, #logo a:focus {
   background-position: 0 -138px;
 }
 
-.info-header {
-  position: absolute;
-  right: 0;
-  top: 15px;
+.call-us {
+  float: right;
+  font-size: 1.2em;
 }
-.info-header .call-us {
-  font-size: 20px;
+.call-us i {
+  position: relative;
+  top: 2px;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.make-appt {
+  float: right;
+  clear: right;
+  font-size: 13px;
+  padding: 3px 15px;
+  margin-bottom: 10px;
+}
+.make-appt:hover, .make-appt:focus {
+  color: white;
 }
 
 .nav.primary {
-  border: 0;
-  margin-top: 85px;
-  width: 770px;
+  display: block;
+  margin: 0 0 .4em 0;
   /* end .menu ul li */
   /* highlight current page */
   /* end current highlighters */
 }
 .nav.primary li {
-  float: right;
   position: relative;
+  display: inline-block;
   /*
   plan your menus and drop-downs wisely.
   */
@@ -177,8 +199,8 @@ do they need tweaking?
 }
 .nav.primary li a {
   border-bottom: 0;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
   /*
   you can use hover styles here even though this size
   has the possibility of being a mobile device.
@@ -186,12 +208,10 @@ do they need tweaking?
 }
 .nav.primary li a:hover, .nav.primary li a:focus {
   color: white;
-  border-bottom: 2px solid #782424;
 }
 .nav.primary li ul.sub-menu,
 .nav.primary li ul.children {
   margin-top: 0;
-  border: 1px solid #ccc;
   border-top: 0;
   position: absolute;
   visibility: hidden;
@@ -212,7 +232,6 @@ do they need tweaking?
   border-right: 0;
   display: block;
   width: 180px;
-  border-bottom: 1px solid #ccc;
 }
 .nav.primary li ul.sub-menu li:last-child a,
 .nav.primary li ul.children li:last-child a {
@@ -229,15 +248,34 @@ do they need tweaking?
 }
 
 /* end .nav.primary */
-.social-icons-top a {
+.social-icons {
+  float: right;
+}
+.social-icons ul {
+  margin: 0;
+}
+.social-icons a {
+  display: block;
   font-size: 22px;
   color: #bbb8b8;
-  padding: .3em;
+  padding: .2em .2em 0 .2em;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.social-icons-top a:hover, .social-icons-top a:focus {
+.social-icons a:last-of-type {
+  padding-right: 0;
+}
+.social-icons a:hover, .social-icons a:focus {
   color: white;
+}
+.social-icons a i {
+  background: #202020;
+  padding: .4em .7em;
+  border-radius: 6px;
+  font-size: 20px;
+}
+.social-icons a i:hover, .social-icons a i:focus {
+  background: #252525;
 }
 
 .sidebar {
@@ -287,6 +325,12 @@ mobile. Make sure to double check these!
 }
 
 /* end .footer-links */
+.home #content {
+  background: url("../images/hero-bg.jpg") 0 -25px;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .wrap {
   width: 1040px;
 }
